@@ -1,6 +1,6 @@
 # YouTube Shorts upload kit: "Rs 0 AI Video Editor"
 
-**File:** `build-with-ahmed-ai-editing-short-own-voice.mp4` (Ahmed's own voice + original background music, 9:16, 72 sec; Shorts can be up to 3 min)
+**File:** `build-with-ahmed-ai-editing-short-own-voice.mp4` (Ahmed's own voice + original background music, 9:16, 74 sec; Shorts can be up to 3 min)
 
 ## Title (pick one, under 60 chars)
 1. Claude Ko Apna Video Editor Banayein — Bilkul Muft 🤯
