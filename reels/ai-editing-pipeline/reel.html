@@ -1,0 +1,180 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+  :root{--ink:#0A0E17;--panel:#121826;--line:#1F2838;--lime:#C6FF3D;--cyan:#4DE1FF;--txt:#EAF0FA;--mute:#7C8AA5}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{width:1080px;height:1920px;overflow:hidden;background:var(--ink);font-family:'Inter','Inter Display',sans-serif;color:var(--txt)}
+  #stage{position:relative;width:1080px;height:1920px;overflow:hidden}
+  .grid{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:90px 90px;opacity:.35}
+  .glow{position:absolute;width:1100px;height:1100px;border-radius:50%;filter:blur(140px);opacity:.28}
+  #g1{background:var(--lime);left:-500px;top:-300px}
+  #g2{background:var(--cyan);right:-550px;bottom:-200px}
+  /* brand bar */
+  #brand{position:absolute;top:110px;left:80px;right:80px;display:flex;align-items:center;justify-content:space-between}
+  .logo{display:flex;align-items:center;gap:22px}
+  .mark{width:78px;height:78px;border-radius:20px;background:var(--lime);color:var(--ink);font-weight:900;font-size:40px;display:flex;align-items:center;justify-content:center;letter-spacing:-2px}
+  .bname{font-size:34px;font-weight:800;letter-spacing:4px}
+  .bname span{color:var(--lime)}
+  #steps{display:flex;gap:14px}
+  .dot{width:54px;height:10px;border-radius:5px;background:var(--line)}
+  .dot.on{background:var(--lime)}
+  .scene{position:absolute;left:80px;right:80px;top:330px;height:1150px;opacity:0}
+  .kicker{font-size:34px;font-weight:700;letter-spacing:6px;color:var(--cyan);text-transform:uppercase;margin-bottom:34px}
+  .big{font-size:132px;font-weight:900;line-height:1.0;letter-spacing:-4px}
+  .lime{color:var(--lime)} .cyan{color:var(--cyan)}
+  .card{background:var(--panel);border:2px solid var(--line);border-radius:36px;padding:48px}
+  .flow{display:flex;align-items:center;gap:24px;margin-top:80px}
+  .node{flex:1;text-align:center;padding:40px 10px;border-radius:30px;background:var(--panel);border:2px solid var(--line);font-size:34px;font-weight:700}
+  .node .ic{font-size:72px;margin-bottom:16px}
+  .arrow{font-size:52px;color:var(--lime);font-weight:900}
+  .stepno{font-size:220px;font-weight:900;color:transparent;-webkit-text-stroke:4px var(--lime);line-height:1;letter-spacing:-8px}
+  .stitle{font-size:76px;font-weight:900;line-height:1.05;letter-spacing:-2px;margin:10px 0 50px}
+  .folder{display:flex;align-items:center;gap:30px;padding:34px 40px;border-radius:26px;background:#0E1420;border:2px solid var(--line);margin-bottom:24px;font-size:44px;font-weight:700}
+  .folder small{display:block;font-size:28px;color:var(--mute);font-weight:500;margin-top:6px}
+  .fi{width:84px;height:66px;border-radius:12px;background:var(--cyan);position:relative}
+  .fi:before{content:'';position:absolute;top:-12px;left:0;width:38px;height:18px;border-radius:8px 8px 0 0;background:inherit}
+  .term{font-family:'DejaVu Sans Mono',monospace;font-size:34px;line-height:1.7}
+  .term .p{color:var(--lime)}
+  .tools{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:34px}
+  .tool{padding:30px;border-radius:24px;background:#0E1420;border:2px solid var(--line);font-size:38px;font-weight:800}
+  .tool small{display:block;font-size:26px;color:var(--mute);font-weight:500;margin-top:8px}
+  .tool .ck{color:var(--lime);float:right}
+  .reels{display:flex;gap:24px}
+  .reel{flex:1;height:520px;border-radius:28px;background:linear-gradient(160deg,#1b2436,#0e1420);border:2px solid var(--line);position:relative;overflow:hidden}
+  .reel:after{content:'▶';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:60px;color:var(--txt);opacity:.7}
+  .scan{position:absolute;left:0;right:0;height:6px;background:var(--lime);box-shadow:0 0 30px var(--lime)}
+  .chips{display:flex;flex-wrap:wrap;gap:16px;margin-top:36px}
+  .chip{padding:16px 28px;border-radius:40px;border:2px solid var(--cyan);color:var(--cyan);font-size:32px;font-weight:700}
+  .bar{height:28px;border-radius:14px;background:#0E1420;border:2px solid var(--line);overflow:hidden;margin-top:30px}
+  .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--cyan),var(--lime))}
+  .pct{font-size:120px;font-weight:900;margin-top:40px}
+  .cta{font-size:150px;font-weight:900;letter-spacing:-4px;line-height:1}
+  .btn{display:inline-block;margin-top:60px;padding:36px 60px;border-radius:30px;background:var(--lime);color:var(--ink);font-size:52px;font-weight:900}
+  /* captions */
+  #cap{position:absolute;left:70px;right:70px;bottom:250px;text-align:center;font-size:66px;font-weight:900;line-height:1.15;letter-spacing:-1px;text-shadow:0 6px 30px rgba(0,0,0,.8)}
+  #cap b{color:var(--lime)}
+  #handle{position:absolute;bottom:120px;left:0;right:0;text-align:center;font-size:30px;font-weight:700;letter-spacing:3px;color:var(--mute)}
+</style></head>
+<body><div id="stage">
+  <div class="grid"></div><div class="glow" id="g1"></div><div class="glow" id="g2"></div>
+
+  <div id="brand">
+    <div class="logo"><div class="mark">BA</div><div class="bname">BUILD WITH <span>AHMED</span></div></div>
+    <div id="steps"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+  </div>
+
+  <!-- S0 hook -->
+  <div class="scene" id="s0">
+    <div class="kicker">AI Video Editing</div>
+    <div class="big">Editor ki<br>fees?<br><span class="lime" id="zero">₹0</span></div>
+  </div>
+  <!-- S1 pipeline -->
+  <div class="scene" id="s1">
+    <div class="kicker">Free AI Pipeline</div>
+    <div class="big" style="font-size:110px">Raw clip <span class="cyan">andar.</span><br>Reel <span class="lime">bahar.</span></div>
+    <div class="flow">
+      <div class="node" id="n1"><div class="ic">🎥</div>Raw</div><div class="arrow">→</div>
+      <div class="node" id="n2"><div class="ic">🤖</div>Claude</div><div class="arrow">→</div>
+      <div class="node" id="n3"><div class="ic">📱</div>Reel</div>
+    </div>
+  </div>
+  <!-- S2 step1 -->
+  <div class="scene" id="s2">
+    <div class="stepno">01</div>
+    <div class="stitle">Claude Desktop +<br>ek project folder</div>
+    <div class="card">
+      <div class="folder" id="f1"><div class="fi"></div><div>/raw<small>tumhari original clips</small></div></div>
+      <div class="folder" id="f2"><div class="fi" style="background:var(--lime)"></div><div>/style<small>reels jinka style chahiye</small></div></div>
+      <div class="folder" id="f3"><div class="fi" style="background:#9b8cff"></div><div>/output<small>final reels yahan aayengi</small></div></div>
+    </div>
+  </div>
+  <!-- S3 step2 -->
+  <div class="scene" id="s3">
+    <div class="stepno">02</div>
+    <div class="stitle">Free tools —<br>Claude khud install kare</div>
+    <div class="card term">
+      <div><span class="p">❯</span> <span id="typed"></span></div>
+      <div class="tools">
+        <div class="tool" id="t1">FFmpeg <span class="ck">✓</span><small>cut · merge · render</small></div>
+        <div class="tool" id="t2">Whisper <span class="ck">✓</span><small>auto captions</small></div>
+        <div class="tool" id="t3">yt-dlp <span class="ck">✓</span><small>reference download</small></div>
+        <div class="tool" id="t4">HyperFrames <span class="ck">✓</span><small>motion graphics</small></div>
+      </div>
+    </div>
+  </div>
+  <!-- S4 step3 -->
+  <div class="scene" id="s4">
+    <div class="stepno">03</div>
+    <div class="stitle">Apna style<br>sikhao</div>
+    <div class="reels"><div class="reel"><div class="scan" id="sc1"></div></div><div class="reel"><div class="scan" id="sc2"></div></div><div class="reel"><div class="scan" id="sc3"></div></div></div>
+    <div class="chips"><div class="chip" id="c1">fonts</div><div class="chip" id="c2">cuts</div><div class="chip" id="c3">captions</div><div class="chip" id="c4">sound</div><div class="chip" id="c5">pacing</div></div>
+  </div>
+  <!-- S5 step4 -->
+  <div class="scene" id="s5">
+    <div class="stepno">04</div>
+    <div class="stitle">Footage drop.<br>Ek prompt. Done.</div>
+    <div class="card">
+      <div class="term" style="color:var(--mute)">rendering final_reel.mp4</div>
+      <div class="bar"><i id="prog"></i></div>
+      <div class="pct" id="pct">0%</div>
+    </div>
+  </div>
+  <!-- S6 CTA -->
+  <div class="scene" id="s6">
+    <div class="kicker">Full prompt chahiye?</div>
+    <div class="cta">Comment<br><span class="lime">"BUILD"</span></div>
+    <div class="btn" id="fbtn">Follow @BuildWithAhmed</div>
+  </div>
+
+  <div id="cap"></div>
+  <div id="handle">BUILD WITH AHMED</div>
+</div>
+<script>
+const SC=[[0,3.6],[3.6,7.4],[7.4,13],[13,19],[19,24.6],[24.6,29.4],[29.4,34]];
+const CAPS=[
+ [0.2,1.8,'Video editor ki <b>fees?</b>'],[1.8,3.6,'Ab <b>zero.</b> Seriously.'],
+ [3.6,5.6,'Ek <b>free AI pipeline</b>'],[5.6,7.4,'raw clip andar, <b>reel bahar.</b>'],
+ [7.4,10.2,'Step 1: <b>Claude Desktop</b> install karo'],[10.2,13,'aur ek <b>project folder</b> banao.'],
+ [13,16,'Step 2: Claude ko bolo'],[16,19,'<b>free tools</b> khud install kare.'],
+ [19,21.8,'Step 3: apni favourite reels do'],[21.8,24.6,'Claude <b>style seekh lega.</b>'],
+ [24.6,27,'Step 4: footage drop karo,'],[27,29.4,'ek prompt — <b>reel ready.</b>'],
+ [29.4,31.8,'Full prompt chahiye? Comment <b>BUILD</b>'],[31.8,34,'aur follow karo <b>Build with Ahmed.</b>']];
+const $=id=>document.getElementById(id);
+const cl=(x)=>Math.max(0,Math.min(1,x));
+const ease=x=>1-Math.pow(1-cl(x),3);
+const back=x=>{x=cl(x);const c=1.7;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+function pop(el,t,start,d=.35){const p=(t-start)/d;el.style.opacity=cl(p);el.style.transform=`translateY(${(1-ease(p))*40}px) scale(${.9+.1*back(p)})`;}
+window.render=function(t){
+  SC.forEach(([a,b],i)=>{const el=$('s'+i);const pin=ease((t-a)/.45),pout=ease((t-(b-.3))/.3);
+    const vis=t>=a&&t<b;el.style.opacity=vis?Math.min(pin,1-pout):0;
+    el.style.transform=`translateY(${(1-pin)*80-pout*60}px)`;});
+  // step dots
+  const step=t<7.4?0:t<13?1:t<19?2:t<24.6?3:t<29.4?4:5;
+  document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('on',i<step && step<5 || step==5));
+  // glows drift
+  $('g1').style.transform=`translate(${Math.sin(t*.4)*120}px,${Math.cos(t*.3)*90}px)`;
+  $('g2').style.transform=`translate(${Math.cos(t*.35)*120}px,${Math.sin(t*.45)*90}px)`;
+  // s0
+  { const p=(t-1.8)/.5; $('zero').style.display='inline-block'; $('zero').style.transform=`scale(${t<1.8?0:back(p)*1})`; }
+  // s1
+  pop($('n1'),t,4.4);pop($('n2'),t,5.0);pop($('n3'),t,5.6);
+  // s2
+  pop($('f1'),t,8.4);pop($('f2'),t,9.2);pop($('f3'),t,10.0);
+  // s3 typing
+  const cmd='install ffmpeg whisper yt-dlp hyperframes';const n=Math.floor(cl((t-13.6)/2.2)*cmd.length);
+  $('typed').textContent=cmd.slice(0,n)+(Math.floor(t*3)%2?'▌':' ');
+  ['t1','t2','t3','t4'].forEach((id,i)=>pop($(id),t,15.9+i*.55));
+  // s4 scan
+  ['sc1','sc2','sc3'].forEach((id,i)=>{$(id).style.top=(((t-19.3+i*.4)*260)%520+520)%520+'px'});
+  ['c1','c2','c3','c4','c5'].forEach((id,i)=>pop($(id),t,21.6+i*.4));
+  // s5 progress
+  const pr=ease((t-25.4)/3.2);$('prog').style.width=(pr*100)+'%';$('pct').textContent=Math.round(pr*100)+'%';
+  $('pct').style.color=pr>=1?'var(--lime)':'var(--txt)';
+  // s6
+  { const p=(t-31.6)/.4; $('fbtn').style.transform=`scale(${t<31.6?0:back(p)})`; }
+  // captions
+  const c=CAPS.find(([a,b])=>t>=a&&t<b);const cap=$('cap');
+  if(c){cap.innerHTML=c[2];const p=(t-c[0])/.18;cap.style.opacity=cl(p);cap.style.transform=`scale(${.92+.08*ease(p)})`;}else cap.style.opacity=0;
+};
+render(0);
+</script></body></html>
