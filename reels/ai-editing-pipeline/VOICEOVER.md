@@ -41,3 +41,11 @@ ffmpeg -framerate 30 -i frames/%05d.jpg -c:v libx264 -pix_fmt yuv420p -crf 18 ou
 > ₹0 mein apna AI video editor 🤖🎬 Claude + free tools = raw footage se ready reel, ek prompt mein.
 > Comment **BUILD** aur main full prompt DM karunga.
 > #BuildWithAhmed #ClaudeAI #AIVideoEditing #AITools #ContentCreation #FFmpeg #Whisper
+
+## Free AI voice (already added)
+`build-with-ahmed-ai-editing-reel-voiced.mp4` is the ready-to-post version. Its voice is Kokoro (free, open-source, Apache-2.0), using the Hindi male voice `hm_omega`. The voice track alone is in `voice.mp3`.
+To regenerate it with a different voice (`hm_psi` male, `hf_alpha`/`hf_beta` female), download `kokoro-v1.0.onnx` and `voices-v1.0.bin` from github.com/thewh1teagle/kokoro-onnx releases into a folder, then:
+```bash
+pip install kokoro-onnx soundfile
+python3 vo.py <model-folder> hm_psi voice.wav
+```
