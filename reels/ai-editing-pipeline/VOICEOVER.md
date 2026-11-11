@@ -85,10 +85,17 @@ Script for recording in your own voice. Pause 1–2 seconds after each line.
 17. Poora prompt chahiye? Comment karein BUILD. Aur follow karein, Build with Ahmed.
 
 ## Final: Ahmed's own voice (YouTube Short)
-`build-with-ahmed-ai-editing-short-own-voice.mp4` (74.9s) uses Ahmed's own recording, which has been cleaned (high-pass filter, noise reduction, compression, loudness at -14 LUFS). Two takes were removed: the false start "bas in ke…" and the first take of "Apne favourite creator ki…". The voice track alone is `voice-own.mp3`.
+`build-with-ahmed-ai-editing-short-own-voice.mp4` (72.3s) uses Ahmed's own recording, which has been cleaned (high-pass filter, noise reduction, compression, loudness at -14 LUFS). Removed: the false start "bas in ke…", the first take of "Apne favourite creator ki…", and the mispronounced "FFmpeg" (~18s). The voice track alone is `voice-own.mp3`.
 `build_own_voice.py` lists which part of the recording goes with which line. For a new recording, update those times and run:
 ```bash
 python3 build_own_voice.py recording.m4a work
 mkdir frames && node render.js reel-urdu.html frames 30 <total from timeline.js>
 ffmpeg -framerate 30 -i frames/%05d.jpg -i work/voice.wav -c:v libx264 -pix_fmt yuv420p -crf 18 -c:a aac -af loudnorm=I=-14:TP=-1.5 -shortest out.mp4
+```
+
+### Background music
+`bg-music-original.mp3` is an original lo-fi track made from scratch by `gen_music.py` (pure synthesis, no samples), so it can't get a copyright strike or a Content ID claim. It sits ~12 dB under the voice and ducks automatically (sidechain) while you speak:
+```bash
+python3 gen_music.py <seconds> music.wav
+ffmpeg -i voice.wav -i music.wav -filter_complex "[0:a]aresample=44100,aformat=channel_layouts=stereo,asplit[v1][v2];[1:a]volume=0.22[m];[m][v2]sidechaincompress=threshold=0.02:ratio=5:attack=30:release=500[md];[v1][md]amix=inputs=2:normalize=0,loudnorm=I=-14:TP=-1.5[a]" -map "[a]" mixed.wav
 ```
