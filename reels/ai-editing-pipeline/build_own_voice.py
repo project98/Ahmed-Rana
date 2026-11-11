@@ -19,7 +19,7 @@ SCENES = [
  ("pipe", [([(2.52, 6.15)], ["Ek <b>muft AI pipeline</b>", "raw clip andar, <b>tayyar reel bahar.</b>"])]),
  ("s1",   [([(7.15, 8.10), (8.45, 12.90)], ["Step 1: <b>Claude Desktop</b> install karein", "aur ek <b>project folder</b> banayein."])]),
  ("s2",   [([(13.02, 15.95)], ["Claude ko <b>4 muft tools</b> dein."])]),
- ("tools",[([(18.66, 21.70)], ["<b>FFmpeg</b> = video ka engine", "cut, join aur <b>final render.</b>"]),
+ ("tools",[([(16.02, 21.70)], ["<b>FFmpeg:</b> video ka engine", "cut, join aur <b>final render.</b>"]),
            ([(22.42, 25.40)], ["<b>Whisper:</b> awaz sun kar", "khud <b>captions likhta hai.</b>"]),
            ([(25.72, 29.95)], ["<b>yt-dlp:</b> reels download kar ke", "<b>study karne ke liye.</b>"]),
            ([(30.66, 35.20)], ["<b>HyperFrames:</b> animated text", "aur <b>motion graphics.</b>"])]),
