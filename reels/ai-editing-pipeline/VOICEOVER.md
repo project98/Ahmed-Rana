@@ -83,3 +83,12 @@ Script for recording in your own voice. Pause 1–2 seconds after each line.
 15. jo har baar perfection ke saath kaam karti hai.
 16. Step chaar: footage daalein, ek prompt dein, aur reel tayyar.
 17. Poora prompt chahiye? Comment karein BUILD. Aur follow karein, Build with Ahmed.
+
+## Final: Ahmed's own voice (YouTube Short)
+`build-with-ahmed-ai-editing-short-own-voice.mp4` (74.9s) uses Ahmed's own recording, which has been cleaned (high-pass filter, noise reduction, compression, loudness at -14 LUFS). Two takes were removed: the false start "bas in ke…" and the first take of "Apne favourite creator ki…". The voice track alone is `voice-own.mp3`.
+`build_own_voice.py` lists which part of the recording goes with which line. For a new recording, update those times and run:
+```bash
+python3 build_own_voice.py recording.m4a work
+mkdir frames && node render.js reel-urdu.html frames 30 <total from timeline.js>
+ffmpeg -framerate 30 -i frames/%05d.jpg -i work/voice.wav -c:v libx264 -pix_fmt yuv420p -crf 18 -c:a aac -af loudnorm=I=-14:TP=-1.5 -shortest out.mp4
+```
