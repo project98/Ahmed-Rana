@@ -56,3 +56,20 @@ Urdu caption to post with it:
 > Rs 0 mein apna AI video editor 🤖🎬 Claude + muft tools = raw footage se tayyar reel, sirf ek prompt mein.
 > Comment **BUILD** karein, main poora prompt DM karunga.
 > #BuildWithAhmed #ClaudeAI #AIVideoEditing #AITools #PakistanTech #ContentCreation
+
+### Urdu version, 49s, with tool explanations (current)
+Script for recording in your own voice. Pause 1–2 seconds after each line.
+
+| Time | Line |
+|---|---|
+| 0–3.6 | Video editor ki fees? Ab bilkul muft. |
+| 3.6–7.4 | Ek muft AI pipeline. Raw clip andar, tayyar reel bahar. |
+| 7.4–13 | Pehla qadam: Claude Desktop install karein, aur ek project folder banayein. |
+| 13–19 | Doosra qadam: Claude se kahein, yeh chaar muft tools khud install kare. |
+| 19–22.75 | FFmpeg: video ka engine. Cut, join, aur final render. |
+| 22.75–26.5 | Whisper: aap ki awaz sun kar khud captions likhta hai. |
+| 26.5–30.25 | yt-dlp: reference reels download karta hai. |
+| 30.25–34 | HyperFrames: animated text aur motion graphics banata hai. |
+| 34–39.6 | Teesra qadam: apni pasandeeda reels dein. Claude aap ka poora andaaz seekh lega. |
+| 39.6–44.4 | Chautha qadam: footage daalein, ek prompt dein, aur reel tayyar. |
+| 44.4–49 | Poora prompt chahiye? Comment karein BUILD. Aur follow karein, Build with Ahmed. |
