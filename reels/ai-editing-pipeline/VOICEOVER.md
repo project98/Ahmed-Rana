@@ -49,3 +49,10 @@ To regenerate it with a different voice (`hm_psi` male, `hf_alpha`/`hf_beta` fem
 pip install kokoro-onnx soundfile
 python3 vo.py <model-folder> hm_psi voice.wav
 ```
+
+## Urdu version
+`build-with-ahmed-ai-editing-reel-urdu.mp4` has Urdu wording (muft, qadam, tayyar, pasandeeda, andaaz), Roman Urdu captions, "Rs 0" instead of ₹0, and the Kokoro male voice `hm_psi`. The source files are `reel-urdu.html` and `vo_urdu.py`, and the voice track alone is `voice-urdu.mp3`.
+Urdu caption to post with it:
+> Rs 0 mein apna AI video editor 🤖🎬 Claude + muft tools = raw footage se tayyar reel, sirf ek prompt mein.
+> Comment **BUILD** karein, main poora prompt DM karunga.
+> #BuildWithAhmed #ClaudeAI #AIVideoEditing #AITools #PakistanTech #ContentCreation
