@@ -7,17 +7,12 @@
   #stage{position:relative;width:1080px;height:1920px;overflow:hidden}
   .grid{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:90px 90px;opacity:.35}
   .glow{position:absolute;width:1100px;height:1100px;border-radius:50%;filter:blur(140px);opacity:.28}
-  #g1{background:var(--lime);left:-500px;top:-300px}
-  #g2{background:var(--cyan);right:-550px;bottom:-200px}
-  /* brand bar */
+  #g1{background:var(--lime);left:-500px;top:-300px} #g2{background:var(--cyan);right:-550px;bottom:-200px}
   #brand{position:absolute;top:110px;left:80px;right:80px;display:flex;align-items:center;justify-content:space-between}
   .logo{display:flex;align-items:center;gap:22px}
   .mark{width:78px;height:78px;border-radius:20px;background:var(--lime);color:var(--ink);font-weight:900;font-size:40px;display:flex;align-items:center;justify-content:center;letter-spacing:-2px}
-  .bname{font-size:34px;font-weight:800;letter-spacing:4px}
-  .bname span{color:var(--lime)}
-  #steps{display:flex;gap:14px}
-  .dot{width:54px;height:10px;border-radius:5px;background:var(--line)}
-  .dot.on{background:var(--lime)}
+  .bname{font-size:34px;font-weight:800;letter-spacing:4px} .bname span{color:var(--lime)}
+  #steps{display:flex;gap:14px} .dot{width:54px;height:10px;border-radius:5px;background:var(--line)} .dot.on{background:var(--lime)}
   .scene{position:absolute;left:80px;right:80px;top:330px;height:1150px;opacity:0}
   .kicker{font-size:34px;font-weight:700;letter-spacing:6px;color:var(--cyan);text-transform:uppercase;margin-bottom:34px}
   .big{font-size:132px;font-weight:900;line-height:1.0;letter-spacing:-4px}
@@ -25,58 +20,60 @@
   .card{background:var(--panel);border:2px solid var(--line);border-radius:36px;padding:48px}
   .flow{display:flex;align-items:center;gap:24px;margin-top:80px}
   .node{flex:1;text-align:center;padding:40px 10px;border-radius:30px;background:var(--panel);border:2px solid var(--line);font-size:34px;font-weight:700}
-  .node .ic{font-size:72px;margin-bottom:16px}
-  .arrow{font-size:52px;color:var(--lime);font-weight:900}
+  .node .ic{font-size:72px;margin-bottom:16px} .arrow{font-size:52px;color:var(--lime);font-weight:900}
   .stepno{font-size:220px;font-weight:900;color:transparent;-webkit-text-stroke:4px var(--lime);line-height:1;letter-spacing:-8px}
   .stitle{font-size:76px;font-weight:900;line-height:1.05;letter-spacing:-2px;margin:10px 0 50px}
   .folder{display:flex;align-items:center;gap:30px;padding:34px 40px;border-radius:26px;background:#0E1420;border:2px solid var(--line);margin-bottom:24px;font-size:44px;font-weight:700}
   .folder small{display:block;font-size:28px;color:var(--mute);font-weight:500;margin-top:6px}
   .fi{width:84px;height:66px;border-radius:12px;background:var(--cyan);position:relative}
   .fi:before{content:'';position:absolute;top:-12px;left:0;width:38px;height:18px;border-radius:8px 8px 0 0;background:inherit}
-  .term{font-family:'DejaVu Sans Mono',monospace;font-size:34px;line-height:1.7}
-  .term .p{color:var(--lime)}
-  .tools{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:34px}
-  .tool{padding:30px;border-radius:24px;background:#0E1420;border:2px solid var(--line);font-size:38px;font-weight:800}
-  .tool small{display:block;font-size:26px;color:var(--mute);font-weight:500;margin-top:8px}
-  .tool .ck{color:var(--lime);float:right}
-  .reels{display:flex;gap:24px}
-  .reel{flex:1;height:520px;border-radius:28px;background:linear-gradient(160deg,#1b2436,#0e1420);border:2px solid var(--line);position:relative;overflow:hidden}
-  .reel:after{content:'▶';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:60px;color:var(--txt);opacity:.7}
+  .mono{font-family:'DejaVu Sans Mono',monospace}
+  .term{font-size:34px;line-height:1.7} .p{color:var(--lime)}
+  .tchips{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:34px}
+  .tchip{padding:30px;border-radius:24px;background:#0E1420;border:2px solid var(--line);font-size:40px;font-weight:800;display:flex;justify-content:space-between}
+  .ck{color:var(--lime)}
+  .trow{display:flex;gap:30px;align-items:center;padding:34px 36px;border-radius:28px;background:var(--panel);border:3px solid var(--line);margin-bottom:24px;opacity:.35}
+  .trow.on{border-color:var(--lime);opacity:1;background:#141c2b}
+  .tic{width:110px;height:110px;flex:none;border-radius:26px;background:#0E1420;display:flex;align-items:center;justify-content:center;font-size:58px}
+  .tn{font-size:50px;font-weight:900} .td{font-size:32px;color:var(--mute);font-weight:600;line-height:1.3;margin-top:8px} .trow.on .td{color:var(--txt)}
+  .link{display:flex;align-items:center;gap:20px;padding:24px 30px;border-radius:20px;background:#0E1420;border:2px solid var(--line);margin-top:18px;font-size:34px;font-weight:700}
+  .link .u{color:var(--cyan)} .link .ck{margin-left:auto;font-size:40px}
+  .power{margin-top:50px;font-size:96px;font-weight:900;letter-spacing:-3px;line-height:1}
+  .reels{display:flex;gap:18px}
+  .reel{flex:1;height:420px;border-radius:24px;background:linear-gradient(160deg,#1b2436,#0e1420);border:2px solid var(--line);position:relative;overflow:hidden}
+  .reel:after{content:'▶';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:44px;opacity:.7}
   .scan{position:absolute;left:0;right:0;height:6px;background:var(--lime);box-shadow:0 0 30px var(--lime)}
-  .chips{display:flex;flex-wrap:wrap;gap:16px;margin-top:36px}
+  .rcount{font-size:44px;font-weight:900;margin:26px 0 6px}
+  .chips{display:flex;flex-wrap:wrap;gap:16px;margin-top:22px}
   .chip{padding:16px 28px;border-radius:40px;border:2px solid var(--cyan);color:var(--cyan);font-size:32px;font-weight:700}
+  .sl{display:flex;gap:20px;font-size:32px;line-height:1.5;padding:12px 0;border-bottom:1px solid var(--line)}
+  .sl .k{color:var(--lime);width:230px;flex:none}
+  .badge{display:inline-block;margin-top:44px;padding:26px 40px;border-radius:24px;background:var(--lime);color:var(--ink);font-size:44px;font-weight:900}
   .bar{height:28px;border-radius:14px;background:#0E1420;border:2px solid var(--line);overflow:hidden;margin-top:30px}
   .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--cyan),var(--lime))}
   .pct{font-size:120px;font-weight:900;margin-top:40px}
   .cta{font-size:150px;font-weight:900;letter-spacing:-4px;line-height:1}
   .btn{display:inline-block;margin-top:60px;padding:36px 60px;border-radius:30px;background:var(--lime);color:var(--ink);font-size:52px;font-weight:900}
-  /* captions */
-  #cap{position:absolute;left:70px;right:70px;bottom:250px;text-align:center;font-size:66px;font-weight:900;line-height:1.15;letter-spacing:-1px;text-shadow:0 6px 30px rgba(0,0,0,.8)}
+  #cap{position:absolute;left:70px;right:70px;bottom:250px;text-align:center;font-size:62px;font-weight:900;line-height:1.15;letter-spacing:-1px;text-shadow:0 6px 30px rgba(0,0,0,.8)}
   #cap b{color:var(--lime)}
   #handle{position:absolute;bottom:120px;left:0;right:0;text-align:center;font-size:30px;font-weight:700;letter-spacing:3px;color:var(--mute)}
-  .trow{display:flex;gap:30px;align-items:center;padding:34px 36px;border-radius:28px;background:var(--panel);border:3px solid var(--line);margin-bottom:24px;opacity:.35}
-  .trow.on{border-color:var(--lime);opacity:1;background:#141c2b}
-  .tic{width:110px;height:110px;flex:none;border-radius:26px;background:#0E1420;display:flex;align-items:center;justify-content:center;font-size:58px}
-  .tn{font-size:50px;font-weight:900}
-  .td{font-size:32px;color:var(--mute);font-weight:600;line-height:1.3;margin-top:8px}
-  .trow.on .td{color:var(--txt)}
-</style></head>
+</style>
+<script src="timeline.js"></script>
+</head>
 <body><div id="stage">
   <div class="grid"></div><div class="glow" id="g1"></div><div class="glow" id="g2"></div>
-
   <div id="brand">
     <div class="logo"><div class="mark">BA</div><div class="bname">BUILD WITH <span>AHMED</span></div></div>
     <div id="steps"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
   </div>
 
-  <!-- S0 hook -->
-  <div class="scene" id="s0">
+  <div class="scene" id="hook">
     <div class="kicker">AI Video Editing</div>
-    <div class="big">Editor ki<br>fees?<br><span class="lime" id="zero">Rs 0</span></div>
+    <div class="big">Editor ki<br>fees?<br><span class="lime" id="zero" style="display:inline-block">Rs 0</span></div>
   </div>
-  <!-- S1 pipeline -->
-  <div class="scene" id="s1">
-    <div class="kicker">Free AI Pipeline</div>
+
+  <div class="scene" id="pipe">
+    <div class="kicker">Muft AI Pipeline</div>
     <div class="big" style="font-size:110px">Raw clip <span class="cyan">andar.</span><br>Reel <span class="lime">bahar.</span></div>
     <div class="flow">
       <div class="node" id="n1"><div class="ic">🎥</div>Raw</div><div class="arrow">→</div>
@@ -84,57 +81,73 @@
       <div class="node" id="n3"><div class="ic">📱</div>Reel</div>
     </div>
   </div>
-  <!-- S2 step1 -->
-  <div class="scene" id="s2">
+
+  <div class="scene" id="s1">
     <div class="stepno">01</div>
     <div class="stitle">Claude Desktop +<br>ek project folder</div>
     <div class="card">
-      <div class="folder" id="f1"><div class="fi"></div><div>/raw<small>tumhari original clips</small></div></div>
-      <div class="folder" id="f2"><div class="fi" style="background:var(--lime)"></div><div>/style<small>reels jinka style chahiye</small></div></div>
+      <div class="folder" id="f1"><div class="fi"></div><div>/raw<small>aap ki original clips</small></div></div>
+      <div class="folder" id="f2"><div class="fi" style="background:var(--lime)"></div><div>/style<small>reference reels</small></div></div>
       <div class="folder" id="f3"><div class="fi" style="background:#9b8cff"></div><div>/output<small>final reels yahan aayengi</small></div></div>
     </div>
   </div>
-  <!-- S3 step2 -->
-  <div class="scene" id="s3">
+
+  <div class="scene" id="s2">
     <div class="stepno">02</div>
-    <div class="stitle">Free tools —<br>Claude khud install kare</div>
-    <div class="card term">
-      <div><span class="p">❯</span> <span id="typed"></span></div>
-      <div class="tools">
-        <div class="tool" id="t1">FFmpeg <span class="ck">✓</span><small>cut · merge · render</small></div>
-        <div class="tool" id="t2">Whisper <span class="ck">✓</span><small>auto captions</small></div>
-        <div class="tool" id="t3">yt-dlp <span class="ck">✓</span><small>reference download</small></div>
-        <div class="tool" id="t4">HyperFrames <span class="ck">✓</span><small>motion graphics</small></div>
-      </div>
+    <div class="stitle">4 muft tools</div>
+    <div class="tchips">
+      <div class="tchip" id="c0">FFmpeg</div><div class="tchip" id="c1">Whisper</div>
+      <div class="tchip" id="c2">yt-dlp</div><div class="tchip" id="c3">HyperFrames</div>
     </div>
   </div>
-  <!-- ST tools explained -->
-  <div class="scene" id="s7">
+
+  <div class="scene" id="tools">
     <div class="kicker">Kaunsa tool kya karta hai?</div>
     <div class="trow" id="r0"><div class="tic">🎬</div><div><div class="tn">FFmpeg</div><div class="td">Video ka engine — cut, join, zoom aur final MP4 render</div></div></div>
     <div class="trow" id="r1"><div class="tic">🎙️</div><div><div class="tn">Whisper</div><div class="td">Awaz sun kar khud captions likhta hai — Urdu, Hindi, English</div></div></div>
-    <div class="trow" id="r2"><div class="tic">⬇️</div><div><div class="tn">yt-dlp</div><div class="td">Reference reels download karta hai taa ke Claude style study kare</div></div></div>
-    <div class="trow" id="r3"><div class="tic">✨</div><div><div class="tn">HyperFrames</div><div class="td">Animated text, titles aur motion graphics banata hai</div></div></div>
+    <div class="trow" id="r2"><div class="tic">⬇️</div><div><div class="tn">yt-dlp</div><div class="td">Reels download kar ke study karne ke liye</div></div></div>
+    <div class="trow" id="r3"><div class="tic">✨</div><div><div class="tn">HyperFrames</div><div class="td">Animated text, titles aur motion graphics</div></div></div>
   </div>
-  <!-- S4 step3 -->
-  <div class="scene" id="s4">
+
+  <div class="scene" id="power">
+    <div class="kicker">Links paste · Claude installs</div>
+    <div class="card mono">
+      <div class="term"><span class="p">❯</span> install these tools:</div>
+      <div class="link" id="k0">🔗 <span class="u">FFmpeg</span><span class="ck">✓</span></div>
+      <div class="link" id="k1">🔗 <span class="u">Whisper</span><span class="ck">✓</span></div>
+      <div class="link" id="k2">🔗 <span class="u">yt-dlp</span><span class="ck">✓</span></div>
+      <div class="link" id="k3">🔗 <span class="u">HyperFrames</span><span class="ck">✓</span></div>
+    </div>
+    <div class="power" id="pw">Claude = <span class="lime">Super<br>Powerful</span> ⚡</div>
+  </div>
+
+  <div class="scene" id="s3">
     <div class="stepno">03</div>
-    <div class="stitle">Apna style<br>sikhao</div>
-    <div class="reels"><div class="reel"><div class="scan" id="sc1"></div></div><div class="reel"><div class="scan" id="sc2"></div></div><div class="reel"><div class="scan" id="sc3"></div></div></div>
-    <div class="chips"><div class="chip" id="c1">fonts</div><div class="chip" id="c2">cuts</div><div class="chip" id="c3">captions</div><div class="chip" id="c4">sound</div><div class="chip" id="c5">pacing</div></div>
+    <div class="stitle" style="margin-bottom:30px">Style</div>
+    <div class="reels" id="reels"></div>
+    <div class="rcount" id="rc">Favourite creator · <span class="lime">3–5 reels</span></div>
+    <div class="chips" id="chips"></div>
   </div>
-  <!-- S5 step4 -->
-  <div class="scene" id="s5">
+
+  <div class="scene" id="sheet">
+    <div class="kicker">Reusable style sheet</div>
+    <div class="card mono" id="sheetcard">
+      <div class="term" style="color:var(--mute);margin-bottom:10px">style_sheet.md</div>
+    </div>
+    <div class="badge" id="perf">✓ Har baar perfect</div>
+  </div>
+
+  <div class="scene" id="s4">
     <div class="stepno">04</div>
     <div class="stitle">Footage drop.<br>Ek prompt. Done.</div>
     <div class="card">
-      <div class="term" style="color:var(--mute)">rendering final_reel.mp4</div>
+      <div class="term mono" style="color:var(--mute)">rendering final_reel.mp4</div>
       <div class="bar"><i id="prog"></i></div>
       <div class="pct" id="pct">0%</div>
     </div>
   </div>
-  <!-- S6 CTA -->
-  <div class="scene" id="s6">
+
+  <div class="scene" id="cta">
     <div class="kicker">Poora prompt chahiye?</div>
     <div class="cta">Comment<br><span class="lime">"BUILD"</span></div>
     <div class="btn" id="fbtn">Follow @BuildWithAhmed</div>
@@ -144,57 +157,58 @@
   <div id="handle">BUILD WITH AHMED</div>
 </div>
 <script>
-const SC=[[0,3.6],[3.6,7.4],[7.4,13],[13,19],[34,39.6],[39.6,44.4],[44.4,49],[19,34]];
-const TT=[19,22.75,26.5,30.25,34];
-const CAPS=[
- [0.2,1.8,'Video editor ki <b>fees?</b>'],[1.8,3.6,'Ab bilkul <b>muft.</b>'],
- [3.6,5.6,'Ek <b>muft AI pipeline</b>'],[5.6,7.4,'raw clip andar, <b>tayyar reel bahar.</b>'],
- [7.4,10.2,'Pehla qadam: <b>Claude Desktop</b> install karein'],[10.2,13,'aur ek <b>project folder</b> banayein.'],
- [13,16,'Doosra qadam: Claude se kahein'],[16,19,'yeh <b>4 muft tools</b> khud install kare.'],
- [19,20.9,'<b>FFmpeg:</b> video ka engine'],[20.9,22.75,'cut, join aur <b>final render.</b>'],
- [22.75,24.6,'<b>Whisper:</b> awaz sun kar'],[24.6,26.5,'khud <b>captions likhta hai.</b>'],
- [26.5,28.4,'<b>yt-dlp:</b> reference reels'],[28.4,30.25,'<b>download karta hai.</b>'],
- [30.25,32.1,'<b>HyperFrames:</b> animated text'],[32.1,34,'aur <b>motion graphics</b> banata hai.'],
- [34,36.8,'Teesra qadam: <b>pasandeeda reels</b> dein'],[36.8,39.6,'Claude poora <b>andaaz seekh lega.</b>'],
- [39.6,42,'Chautha qadam: footage daalein,'],[42,44.4,'ek prompt — <b>reel tayyar.</b>'],
- [44.4,46.8,'Poora prompt chahiye? Comment <b>BUILD</b>'],[46.8,49,'aur follow karein <b>Build with Ahmed.</b>']];
 const $=id=>document.getElementById(id);
-const cl=(x)=>Math.max(0,Math.min(1,x));
+const cl=x=>Math.max(0,Math.min(1,x));
 const ease=x=>1-Math.pow(1-cl(x),3);
 const back=x=>{x=cl(x);const c=1.7;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
-function pop(el,t,start,d=.35){const p=(t-start)/d;el.style.opacity=cl(p);el.style.transform=`translateY(${(1-ease(p))*40}px) scale(${.9+.1*back(p)})`;}
+function pop(el,t,s,d=.35){const p=(t-s)/d;el.style.opacity=cl(p);el.style.transform=`translateY(${(1-ease(p))*40}px) scale(${.9+.1*back(p)})`;}
+const S={};TL.scenes.forEach(s=>S[s.name]=s);
+const L=(n,i)=>S[n].lines[i];  // [start,end] of i-th voice line in scene n
+// build dynamic bits
+for(let i=0;i<5;i++){const r=document.createElement('div');r.className='reel';r.innerHTML='<div class="scan"></div>';$('reels').appendChild(r);}
+const CH=['font','colors','cuts','captions','transitions','sound design'];
+CH.forEach(c=>{const e=document.createElement('div');e.className='chip';e.textContent=c;$('chips').appendChild(e);});
+const SH=[['font','Heavy sans, 2-word captions'],['colors','Dark bg + neon accent'],['cuts','Har 1.5 sec par'],['transitions','Zoom punch, whip'],['sound','Whoosh + bass hit'],['pacing','Hook 2 sec mein']];
+SH.forEach(([k,v])=>{const e=document.createElement('div');e.className='sl';e.innerHTML=`<span class="k">${k}:</span><span>${v}</span>`;$('sheetcard').appendChild(e);});
+
 window.render=function(t){
-  SC.forEach(([a,b],i)=>{const el=$('s'+i);const pin=ease((t-a)/.45),pout=ease((t-(b-.3))/.3);
-    const vis=t>=a&&t<b;el.style.opacity=vis?Math.min(pin,1-pout):0;
+  TL.scenes.forEach(s=>{const el=$(s.name);const pin=ease((t-s.a)/.45),pout=ease((t-(s.b-.3))/.3);
+    const vis=t>=s.a&&t<s.b;el.style.opacity=vis?Math.min(pin,1-pout):0;
     el.style.transform=`translateY(${(1-pin)*80-pout*60}px)`;});
-  // step dots
-  const step=t<7.4?0:t<13?1:t<34?2:t<39.6?3:t<44.4?4:5;
-  document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('on',i<step && step<5 || step==5));
-  // glows drift
+  const step=t<S.s1.a?0:t<S.s2.a?1:t<S.s3.a?2:t<S.s4.a?3:4;
+  document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('on',i<step));
   $('g1').style.transform=`translate(${Math.sin(t*.4)*120}px,${Math.cos(t*.3)*90}px)`;
   $('g2').style.transform=`translate(${Math.cos(t*.35)*120}px,${Math.sin(t*.45)*90}px)`;
-  // s0
-  { const p=(t-1.8)/.5; $('zero').style.display='inline-block'; $('zero').style.transform=`scale(${t<1.8?0:back(p)*1})`; }
+  // hook
+  {const z=S.hook.a+1.6;$('zero').style.transform=`scale(${t<z?0:back((t-z)/.5)})`;}
+  // pipe
+  {const a=S.pipe.a;pop($('n1'),t,a+.6);pop($('n2'),t,a+1.3);pop($('n3'),t,a+2.0);}
   // s1
-  pop($('n1'),t,4.4);pop($('n2'),t,5.0);pop($('n3'),t,5.6);
+  {const a=S.s1.a;pop($('f1'),t,a+.8);pop($('f2'),t,a+1.6);pop($('f3'),t,a+2.4);}
   // s2
-  pop($('f1'),t,8.4);pop($('f2'),t,9.2);pop($('f3'),t,10.0);
-  // s3 typing
-  const cmd='install ffmpeg whisper yt-dlp hyperframes';const n=Math.floor(cl((t-13.6)/2.2)*cmd.length);
-  $('typed').textContent=cmd.slice(0,n)+(Math.floor(t*3)%2?'▌':' ');
-  ['t1','t2','t3','t4'].forEach((id,i)=>pop($(id),t,15.9+i*.55));
-  // s4 scan
-  ['sc1','sc2','sc3'].forEach((id,i)=>{$(id).style.top=(((t-34.3+i*.4)*260)%520+520)%520+'px'});
-  ['c1','c2','c3','c4','c5'].forEach((id,i)=>pop($(id),t,36.6+i*.4));
-  // s5 progress
-  const pr=ease((t-40.4)/3.2);$('prog').style.width=(pr*100)+'%';$('pct').textContent=Math.round(pr*100)+'%';
-  $('pct').style.color=pr>=1?'var(--lime)':'var(--txt)';
-  // s6
-  { const p=(t-46.6)/.4; $('fbtn').style.transform=`scale(${t<46.6?0:back(p)})`; }
-  // tools explainer
-  for(let i=0;i<4;i++){const r=$('r'+i);const on=t>=TT[i]&&t<TT[i+1];r.classList.toggle('on',on);r.style.transform=`scale(${on?1+.03*back((t-TT[i])/.3):1})`;}
+  for(let i=0;i<4;i++)pop($('c'+i),t,S.s2.a+.5+i*.45);
+  // tools: highlight the row whose voice line is playing
+  for(let i=0;i<4;i++){const [a]=L('tools',i);const b=i<3?L('tools',i+1)[0]:S.tools.b;const on=t>=a-.15&&t<b-.15;
+    $('r'+i).classList.toggle('on',on);$('r'+i).style.transform=`scale(${on?1+.03*back((t-a+.15)/.3):1})`;}
+  // power
+  {const [a,b]=L('power',1);for(let i=0;i<4;i++){const k=$('k'+i);pop(k,t,S.power.a+.4+i*.3);
+     k.querySelector('.ck').style.opacity=cl((t-(a+(b-a)*(.45+i*.13)))/.2);}
+   const [pa]=L('power',0);const pw=$('pw');pw.style.opacity=t<b?cl((t-pa-.6)/.3):1;pw.style.transform=`scale(${.85+.15*back((t-pa-.6)/.4)})`;}
+  // s3
+  {const [a1]=L('s3',1),[a2,b2]=L('s3',2);
+   [...$('reels').children].forEach((r,i)=>{pop(r,t,a1+i*.3);r.firstChild.style.top=(((t-a1+i*.37)*240)%420+420)%420+'px';});
+   pop($('rc'),t,a1+.8);
+   [...$('chips').children].forEach((c,i)=>pop(c,t,a2+(b2-a2)*i/CH.length));}
+  // sheet
+  {const [a,b]=L('sheet',0);[...$('sheetcard').querySelectorAll('.sl')].forEach((e,i)=>pop(e,t,a+.4+(b-a-.4)*i/SH.length));
+   const [pa]=L('sheet',1);pop($('perf'),t,pa+.2,.4);}
+  // s4
+  {const pr=ease((t-S.s4.a-.6)/(S.s4.b-S.s4.a-1.4));$('prog').style.width=(pr*100)+'%';$('pct').textContent=Math.round(pr*100)+'%';
+   $('pct').style.color=pr>=1?'var(--lime)':'var(--txt)';}
+  // cta
+  {const z=L('cta',0)[0]+2.3;$('fbtn').style.transform=`scale(${t<z?0:back((t-z)/.4)})`;}
   // captions
-  const c=CAPS.find(([a,b])=>t>=a&&t<b);const cap=$('cap');
+  const c=TL.caps.filter(([a,b])=>t>=a&&t<b).pop();const cap=$('cap');
   if(c){cap.innerHTML=c[2];const p=(t-c[0])/.18;cap.style.opacity=cl(p);cap.style.transform=`scale(${.92+.08*ease(p)})`;}else cap.style.opacity=0;
 };
 render(0);

@@ -51,25 +51,35 @@ python3 vo.py <model-folder> hm_psi voice.wav
 ```
 
 ## Urdu version
-`build-with-ahmed-ai-editing-reel-urdu.mp4` has Urdu wording (muft, qadam, tayyar, pasandeeda, andaaz), Roman Urdu captions, "Rs 0" instead of ₹0, and the Kokoro male voice `hm_psi`. The source files are `reel-urdu.html` and `vo_urdu.py`, and the voice track alone is `voice-urdu.mp3`.
+`build-with-ahmed-ai-editing-reel-urdu.mp4` has Urdu wording (muft, qadam, tayyar, pasandeeda, andaaz), Roman Urdu captions, "Rs 0" instead of ₹0, and the Kokoro male voice `hm_psi`. The source files are `reel-urdu.html`, `build_urdu.py` and `timeline.js`, and the voice track alone is `voice-urdu.mp3`.
 Urdu caption to post with it:
 > Rs 0 mein apna AI video editor 🤖🎬 Claude + muft tools = raw footage se tayyar reel, sirf ek prompt mein.
 > Comment **BUILD** karein, main poora prompt DM karunga.
 > #BuildWithAhmed #ClaudeAI #AIVideoEditing #AITools #PakistanTech #ContentCreation
 
-### Urdu version, 49s, with tool explanations (current)
-Script for recording in your own voice. Pause 1–2 seconds after each line.
+### Urdu version, ~73s, young male voice (current)
+The voice is Kokoro `hm_psi` with the pitch raised slightly (×1.08) so it sounds younger. The video's timing follows the voice: `build_urdu.py` generates the voice and writes `timeline.js`, and `reel-urdu.html` reads it.
+```bash
+python3 build_urdu.py <kokoro-model-dir> work            # optional: voice name, pitch e.g. hm_omega 1.1
+mkdir frames && node render.js reel-urdu.html frames 30 <total from timeline.js>
+ffmpeg -framerate 30 -i frames/%05d.jpg -i work/voice.wav -c:v libx264 -pix_fmt yuv420p -crf 18 -c:a aac -shortest out.mp4
+```
 
-| Time | Line |
-|---|---|
-| 0–3.6 | Video editor ki fees? Ab bilkul muft. |
-| 3.6–7.4 | Ek muft AI pipeline. Raw clip andar, tayyar reel bahar. |
-| 7.4–13 | Pehla qadam: Claude Desktop install karein, aur ek project folder banayein. |
-| 13–19 | Doosra qadam: Claude se kahein, yeh chaar muft tools khud install kare. |
-| 19–22.75 | FFmpeg: video ka engine. Cut, join, aur final render. |
-| 22.75–26.5 | Whisper: aap ki awaz sun kar khud captions likhta hai. |
-| 26.5–30.25 | yt-dlp: reference reels download karta hai. |
-| 30.25–34 | HyperFrames: animated text aur motion graphics banata hai. |
-| 34–39.6 | Teesra qadam: apni pasandeeda reels dein. Claude aap ka poora andaaz seekh lega. |
-| 39.6–44.4 | Chautha qadam: footage daalein, ek prompt dein, aur reel tayyar. |
-| 44.4–49 | Poora prompt chahiye? Comment karein BUILD. Aur follow karein, Build with Ahmed. |
+Script for recording in your own voice. Pause 1–2 seconds after each line.
+1. Video editor ki fees? Ab bilkul muft.
+2. Ek muft AI pipeline. Raw clip andar, tayyar reel bahar.
+3. Step ek: Claude Desktop install karein, aur ek project folder banayein.
+4. Step do: Claude ko chaar muft tools dein.
+5. FFmpeg: video ka engine. Cut, join, aur final render.
+6. Whisper: awaz sun kar khud captions likhta hai.
+7. yt-dlp: reels download kar ke study karne ke liye.
+8. HyperFrames: animated text aur motion graphics.
+9. Yeh chaar tools Claude ko super powerful bana dein ge.
+10. Bas in ke links prompt ke saath paste karein, aur Claude inhein khud install kar le ga.
+11. Step teen hai style.
+12. Apne favourite creator ki teen se paanch reels Claude ko dein.
+13. Yeh un ki editing style ko, font se le kar sound design tak, poora breakdown kar de ga.
+14. Phir yeh prompt dein, aur Claude ek reusable style sheet bana de ga,
+15. jo har baar perfection ke saath kaam karti hai.
+16. Step chaar: footage daalein, ek prompt dein, aur reel tayyar.
+17. Poora prompt chahiye? Comment karein BUILD. Aur follow karein, Build with Ahmed.
